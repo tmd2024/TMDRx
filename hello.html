@@ -1,0 +1,645 @@
+import React, { useRef } from "react";
+import {
+  ArrowRight,
+  TrendingUp,
+  Globe,
+  Heart,
+  MapPin,
+  Star,
+  Instagram,
+  Check,
+  MessageCircle,
+  Phone,
+  Users,
+  Building2,
+  Zap,
+  Clock,
+  Settings2,
+  Rocket,
+  Palette,
+  Trophy,
+} from "lucide-react";
+
+const Index = () => {
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      {/* Header / Navigation */}
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-20">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 bg-primary rounded-full flex items-center justify-center shrink-0">
+                <Heart className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
+              </div>
+              <span className="text-lg font-bold text-foreground">ClinicGrow</span>
+            </div>
+
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Services
+              </a>
+              <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Pricing
+              </a>
+              <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Contact
+              </a>
+            </nav>
+
+            <button
+              onClick={scrollToContact}
+              className="px-5 sm:px-6 py-2.5 bg-primary text-primary-foreground rounded-full font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary whitespace-nowrap"
+            >
+              Claim your slot
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center">
+          <div className="text-center md:text-left">
+            <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-1.5 rounded-full text-xs font-semibold mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
+              Launch offer, 3 slots left
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-5 leading-[1.15] tracking-tight">
+              Get found, trusted, and booked online
+            </h1>
+
+            <p className="text-base sm:text-lg text-muted-foreground mb-7 max-w-md mx-auto md:mx-0">
+              Patients check online before they call. We set up your clinic's
+              Google profile, website, and social presence in as little as
+              48 hours.
+            </p>
+
+            <div className="flex items-baseline gap-2 mb-7 justify-center md:justify-start">
+              <span className="text-3xl font-bold text-foreground">₹7,000</span>
+              <span className="text-sm text-muted-foreground">
+                starting price, 48-hour delivery
+              </span>
+            </div>
+
+            <button
+              onClick={scrollToContact}
+              className="px-7 py-3.5 bg-foreground text-background rounded-full font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground inline-flex items-center gap-2 group"
+            >
+              Claim your slot
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            </button>
+          </div>
+
+          {/* Right: illustration */}
+          <div className="relative w-full max-w-[360px] mx-auto py-6">
+            <div className="absolute -top-4 -right-2 sm:right-4 z-10 motion-safe:animate-float-slow rotate-[8deg]">
+              <div className="bg-white rounded-2xl px-4 py-3 shadow-lg flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-full bg-yellow-50 flex items-center justify-center shrink-0">
+                  <Star className="w-3.5 h-3.5 text-yellow-500 fill-yellow-400" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-foreground leading-tight">New 5-star review</p>
+                  <p className="text-[10px] text-muted-foreground">2 minutes ago</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative z-20 mx-auto motion-safe:animate-float" style={{ width: "250px" }}>
+              <div className="bg-foreground rounded-[2.25rem] p-2 shadow-2xl">
+                <div className="bg-white rounded-[1.75rem] overflow-hidden">
+                  <div className="flex justify-center pt-2.5 pb-1">
+                    <div className="w-16 h-1.5 rounded-full bg-foreground/90" />
+                  </div>
+
+                  <div className="px-4 pt-2 pb-4">
+                    <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide mb-0.5">
+                      Your online presence
+                    </p>
+                    <p className="text-sm font-bold text-foreground mb-4">Sunrise Dental Clinic</p>
+
+                    <div className="space-y-3 mb-4">
+                      <div className="flex items-center gap-2.5 pb-3 border-b border-border">
+                        <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                          <MapPin className="w-4 h-4 text-blue-600" aria-hidden="true" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-semibold text-foreground">Google profile</p>
+                          <p className="text-[10px] text-muted-foreground truncate">Showing on Maps and Search</p>
+                        </div>
+                        <span className="text-[10px] font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full shrink-0">
+                          Live
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2.5 pb-3 border-b border-border">
+                        <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center shrink-0">
+                          <Globe className="w-4 h-4 text-indigo-600" aria-hidden="true" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-semibold text-foreground">Website</p>
+                          <p className="text-[10px] text-muted-foreground truncate">sunrisedental.com</p>
+                        </div>
+                        <span className="text-[10px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full shrink-0">
+                          Live
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center shrink-0">
+                          <Instagram className="w-4 h-4 text-white" aria-hidden="true" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-semibold text-foreground">Social media</p>
+                          <p className="text-[10px] text-muted-foreground truncate">3 platforms connected</p>
+                        </div>
+                        <span className="text-[10px] font-semibold text-pink-600 bg-pink-50 px-2 py-1 rounded-full shrink-0">
+                          Active
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="bg-foreground rounded-xl px-3 py-2.5 flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-green-400 shrink-0" aria-hidden="true" />
+                      <span className="text-xs font-semibold text-background">+12 leads this week</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section id="services" className="py-20 sm:py-28 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground text-center mb-12">
+            Why your clinic needs this
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                icon: <Globe className="w-6 h-6 text-primary" aria-hidden="true" />,
+                title: "Invisible online",
+                desc: "No website. Empty Google profile. Dead social media. Your patients are looking elsewhere.",
+              },
+              {
+                icon: <Users className="w-6 h-6 text-primary" aria-hidden="true" />,
+                title: "Losing patients",
+                desc: "Competitors with a strong online presence book appointments while you wonder where patients went.",
+              },
+              {
+                icon: <Building2 className="w-6 h-6 text-primary" aria-hidden="true" />,
+                title: "Missing trust signals",
+                desc: "No professional photos, no testimonials, no proof of credibility. First impression, lost patient.",
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-4">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-foreground rounded-2xl p-8 sm:p-10 text-center">
+            <p className="text-xl sm:text-2xl font-bold text-background mb-2">
+              We've solved this for dozens of clinics.
+            </p>
+            <p className="text-background/70">
+              Get the exact toolkit they use, delivered in days, not months.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-20 sm:py-28 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-1.5 rounded-full text-xs font-semibold mb-6">
+              Launch pricing
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+              Choose your starter package
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Pick the right fit for your clinic's current online presence
+            </p>
+          </div>
+
+          {/* Service Descriptions */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                icon: <MapPin className="w-5 h-5 text-blue-600" aria-hidden="true" />,
+                iconBg: "bg-blue-50",
+                title: "Google Business Profile overhaul",
+                desc: "Show up correctly on Maps and Search. Get found by nearby patients searching for your specialty.",
+              },
+              {
+                icon: <Globe className="w-5 h-5 text-indigo-600" aria-hidden="true" />,
+                iconBg: "bg-indigo-50",
+                title: "One-page website",
+                desc: "A professional digital front door: services, bio, timings, location, WhatsApp and call buttons.",
+              },
+              {
+                icon: <Instagram className="w-5 h-5 text-white" aria-hidden="true" />,
+                iconBg: "bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600",
+                title: "Social profile refresh",
+                desc: "Instagram, Facebook, and LinkedIn made credible and current. Build trust with your audience.",
+              },
+            ].map((service, idx) => (
+              <div
+                key={idx}
+                className="bg-background border border-border rounded-2xl p-6 text-center hover:border-primary/40 hover:shadow-sm transition-all"
+              >
+                <div className={`w-11 h-11 rounded-full ${service.iconBg} flex items-center justify-center mx-auto mb-4`}>
+                  {service.icon}
+                </div>
+                <h3 className="font-bold text-foreground mb-2 text-base">{service.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Pricing Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {/* Quick Start — Featured */}
+            <div className="bg-white border-2 border-primary rounded-2xl p-8 flex flex-col relative">
+              <div className="absolute top-4 left-0 right-0 flex justify-center">
+                <div className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold inline-flex items-center gap-1.5">
+                  <Zap className="w-3 h-3" aria-hidden="true" />
+                  Fastest turnaround
+                </div>
+              </div>
+
+              <div className="pt-8">
+                <h3 className="text-xl font-bold text-foreground mb-1">Quick start</h3>
+                <p className="text-sm text-muted-foreground mb-6">
+                  See results fast before committing further
+                </p>
+
+                <div className="mb-7">
+                  <div className="text-4xl font-bold text-foreground mb-1">₹7,000</div>
+                  <div className="text-sm text-muted-foreground">Delivered in 48 hours</div>
+                </div>
+
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {["Any 1 of the 3 services", "50% deposit to lock your slot", "Fastest delivery of all packages"].map(
+                    (item, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+                        <span className="text-foreground text-sm">{item}</span>
+                      </li>
+                    )
+                  )}
+                </ul>
+
+                <button
+                  onClick={scrollToContact}
+                  className="w-full bg-primary text-primary-foreground py-3 rounded-full font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all"
+                >
+                  Choose this package
+                </button>
+              </div>
+            </div>
+
+            {/* Growth Combo */}
+            <div className="bg-white border border-border rounded-2xl p-8 flex flex-col hover:border-primary/40 hover:shadow-sm transition-all">
+              <h3 className="text-xl font-bold text-foreground mb-1">Growth combo</h3>
+              <p className="text-sm text-muted-foreground mb-6">Accelerate your presence</p>
+
+              <div className="mb-7">
+                <div className="text-4xl font-bold text-foreground mb-1">₹15,000</div>
+                <div className="text-sm text-muted-foreground">Delivered in 10 days</div>
+              </div>
+
+              <ul className="space-y-3 mb-8 flex-grow">
+                {["Any 2 of the 3 services", "50% deposit to lock your slot", "A more complete toolkit"].map(
+                  (item, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+                      <span className="text-foreground text-sm">{item}</span>
+                    </li>
+                  )
+                )}
+              </ul>
+
+              <button
+                onClick={scrollToContact}
+                className="w-full bg-white text-primary border-2 border-primary py-3 rounded-full font-semibold text-sm hover:bg-accent active:scale-[0.98] transition-all"
+              >
+                Choose this package
+              </button>
+            </div>
+
+            {/* Complete Starter */}
+            <div className="bg-white border border-border rounded-2xl p-8 flex flex-col relative hover:border-primary/40 hover:shadow-sm transition-all">
+              <div className="absolute top-4 left-0 right-0 flex justify-center">
+                <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold inline-flex items-center gap-1.5">
+                  <Trophy className="w-3 h-3" aria-hidden="true" />
+                  Best value
+                </div>
+              </div>
+
+              <div className="pt-8">
+                <h3 className="text-xl font-bold text-foreground mb-1">Complete starter</h3>
+                <p className="text-sm text-muted-foreground mb-6">Everything live in one go</p>
+
+                <div className="mb-7">
+                  <div className="text-4xl font-bold text-foreground mb-1">₹20,000</div>
+                  <div className="text-sm text-muted-foreground">Delivered in 10 days</div>
+                </div>
+
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {["All 3 services included", "50% deposit to lock your slot", "Fastest path to full credibility"].map(
+                    (item, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+                        <span className="text-foreground text-sm">{item}</span>
+                      </li>
+                    )
+                  )}
+                </ul>
+
+                <button
+                  onClick={scrollToContact}
+                  className="w-full bg-accent text-accent-foreground py-3 rounded-full font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all"
+                >
+                  Choose this package
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-center text-muted-foreground text-sm">
+            50% deposit to lock your slot, balance on delivery
+          </p>
+        </div>
+      </section>
+
+      {/* Proof Section */}
+      <section className="py-20 sm:py-28 px-4 bg-foreground">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="w-14 h-14 rounded-full bg-background/10 flex items-center justify-center mx-auto mb-7">
+            <TrendingUp className="w-7 h-7 text-green-400" aria-hidden="true" />
+          </div>
+
+          <p className="text-sm font-semibold text-background/70 mb-3">Proven track record</p>
+          <div className="text-6xl sm:text-7xl font-bold text-background mb-3">3.5x</div>
+          <p className="text-2xl font-bold text-background mb-5">Return on ad spend</p>
+
+          <p className="text-background/70 max-w-xl mx-auto">
+            For clients running ad campaigns with us. We've helped dozens of clinics turn an invisible
+            online presence into a steady source of new patients.
+          </p>
+        </div>
+      </section>
+
+      {/* Ongoing Growth Section */}
+      <section className="py-20 sm:py-28 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+              Scale further (optional)
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              After launch, grow with monthly services designed to keep your presence thriving
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            {[
+              {
+                icon: <Instagram className="w-5 h-5 text-white" aria-hidden="true" />,
+                iconBg: "bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600",
+                title: "Social media management",
+                desc: "Ongoing content creation, posting schedules, and engagement to keep your audience connected.",
+              },
+              {
+                icon: <TrendingUp className="w-5 h-5 text-green-600" aria-hidden="true" />,
+                iconBg: "bg-green-50",
+                title: "Ads management",
+                desc: "Google and Meta ads run and optimized monthly to attract new patients and fill your schedule.",
+              },
+              {
+                icon: <Globe className="w-5 h-5 text-indigo-600" aria-hidden="true" />,
+                iconBg: "bg-indigo-50",
+                title: "Website care",
+                desc: "Regular updates, new pages, SEO improvements, and performance monitoring over time.",
+              },
+              {
+                icon: <Palette className="w-5 h-5 text-purple-600" aria-hidden="true" />,
+                iconBg: "bg-purple-50",
+                title: "Branding",
+                desc: "A full identity overhaul: logo design, brand guidelines, and visual consistency across platforms.",
+              },
+            ].map((service, idx) => (
+              <div
+                key={idx}
+                className="bg-background border border-border rounded-2xl p-7 hover:border-primary/40 hover:shadow-sm transition-all group"
+              >
+                <div className={`w-11 h-11 rounded-full ${service.iconBg} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}>
+                  {service.icon}
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">{service.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <button
+              onClick={scrollToContact}
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+            >
+              Ask us about monthly plans
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 sm:py-28 px-4 bg-accent/40">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground text-center mb-14">
+            How it works
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4">
+            {[
+              {
+                num: "1",
+                icon: <Phone className="w-4 h-4 text-primary" aria-hidden="true" />,
+                title: "Quick call and audit",
+                desc: "We review your current online presence and recommend the best fit for you.",
+              },
+              {
+                num: "2",
+                icon: <Check className="w-4 h-4 text-primary" aria-hidden="true" />,
+                title: "Choose and pay deposit",
+                desc: "Pick your package, pay 50% to lock your slot. Balance due on delivery.",
+              },
+              {
+                num: "3",
+                icon: <Settings2 className="w-4 h-4 text-primary" aria-hidden="true" />,
+                title: "We build",
+                desc: "48 hours to 10 days depending on your package. You sit back.",
+              },
+              {
+                num: "4",
+                icon: <Rocket className="w-4 h-4 text-primary" aria-hidden="true" />,
+                title: "Review and launch",
+                desc: "You approve, we go live. Your clinic is now visible and credible.",
+              },
+            ].map((step, idx) => (
+              <div key={idx} className="relative">
+                <div className="bg-white border border-border rounded-2xl p-6 h-full flex flex-col">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-9 h-9 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm shrink-0">
+                      {step.num}
+                    </div>
+                    <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0">
+                      {step.icon}
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-foreground mb-2 text-base leading-snug">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-grow">{step.desc}</p>
+                </div>
+
+                {idx < 3 && (
+                  <div className="hidden md:block absolute top-[52px] left-full w-4 h-px bg-border z-0" />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA & Contact */}
+      <section id="contact" ref={contactRef} className="py-20 sm:py-28 px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
+              Ready to get found?
+            </h2>
+
+            <div className="bg-accent border border-primary/20 rounded-2xl p-6 inline-flex items-center gap-3 max-w-md">
+              <Clock className="w-5 h-5 text-accent-foreground shrink-0" aria-hidden="true" />
+              <div className="text-left">
+                <p className="font-semibold text-foreground text-sm">
+                  Only 3 to 4 clinic slots available this batch
+                </p>
+                <p className="text-muted-foreground text-sm">Launch pricing ends soon. Claim yours now.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Options */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+            
+              href="https://wa.me/919876543210?text=Hi%2C%20I'm%20interested%20in%20the%20Clinic%20Digital%20Starter%20package"
+              className="flex items-center justify-center gap-2.5 bg-green-500 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-green-600 active:scale-[0.98] transition-all"
+            >
+              <MessageCircle className="w-4 h-4" aria-hidden="true" />
+              Message on WhatsApp
+            </a>
+            
+              href="tel:+919876543210"
+              className="flex items-center justify-center gap-2.5 border-2 border-foreground text-foreground bg-white px-8 py-3.5 rounded-full font-semibold hover:bg-accent active:scale-[0.98] transition-all"
+            >
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              Call us now
+            </a>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-white border border-border rounded-2xl p-8 sm:p-10">
+            <form className="space-y-5">
+              <div>
+                <label htmlFor="clinicName" className="block text-sm font-semibold text-foreground mb-2">
+                  Clinic name *
+                </label>
+                <input
+                  id="clinicName"
+                  name="clinicName"
+                  type="text"
+                  placeholder="Your clinic name"
+                  className="w-full px-4 py-3 border border-border rounded-xl bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="contactInfo" className="block text-sm font-semibold text-foreground mb-2">
+                  Your email or phone *
+                </label>
+                <input
+                  id="contactInfo"
+                  name="contactInfo"
+                  type="text"
+                  placeholder="email@clinic.com or +91..."
+                  className="w-full px-4 py-3 border border-border rounded-xl bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="package" className="block text-sm font-semibold text-foreground mb-2">
+                  Which package interests you?
+                </label>
+                <select
+                  id="package"
+                  name="package"
+                  className="w-full px-4 py-3 border border-border rounded-xl bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                >
+                  <option>Quick start, ₹7,000</option>
+                  <option>Growth combo, ₹15,000</option>
+                  <option>Complete starter, ₹20,000</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-foreground mb-2">
+                  Message (optional)
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Any questions or details we should know?"
+                  className="w-full px-4 py-3 border border-border rounded-xl bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none h-24"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-foreground text-background py-3.5 rounded-full font-semibold hover:opacity-90 active:scale-[0.98] transition-all"
+              >
+                Claim your slot
+              </button>
+            </form>
+
+            <p className="text-center text-xs text-muted-foreground mt-6">
+              We'll respond within 2 hours on weekdays. Your details stay confidential.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Index;
