@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TMD — Digital Marketing, Prescribed for Doctors</title>
+<meta name="description" content="Google Business Profile optimization, clinic websites, and social media refresh — bundled into launch offers built for solo practitioners and clinics.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --color-bg:#FBF6EC;
+    --color-bg-card:#FFFFFF;
+    --color-ink:#14324A;
+    --color-ink-soft:#3F5A6E;
+    --color-ink-faint:#7C93A3;
+    --color-accent:#E8622C;
+    --color-accent-deep:#C1442D;
+    --color-accent-soft:#FBE0D2;
+    --color-sage:#1E8A6E;
+    --color-sage-soft:#DCEFE8;
+    --color-gold:#D89A2E;
+    --color-gold-soft:#FBEDD1;
+    --color-teal:#1D6E78;
+    --color-teal-soft:#E7F0F2;
+    --color-line:#E1D6BF;
+    --color-paper:#F7EFDD;
+    --section-teal-tint:#E7F2EE;
+    --section-gold-tint:#FCF1DC;
+    --gradient-dragon: linear-gradient(135deg, #10333C 0%, #5C2A1D 55%, #B84A22 100%);
+
+    --font-display:'Fraunces', serif;
+    --font-body:'IBM Plex Sans', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+
+    --wrap:1120px;
+    --radius:14px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--color-bg);
+    color:var(--color-ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img,svg{ display:block; max-width:100%; }
+
+  a{ color:inherit; }
+
+  h1,h2,h3{
+    font-family:var(--font-display);
+    color:var(--color-ink);
+    margin:0;
+    line-height:1.08;
+    font-weight:600;
+  }
+
+  .wrap{
+    max-width:var(--wrap);
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  .section{ padding:96px 0; }
+  @media (max-width:720px){ .section{ padding:64px 0; } }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--color-accent);
+    border:1px solid var(--color-accent);
+    padding:5px 12px;
+    border-radius:100px;
+    background:var(--color-accent-soft);
+    margin-bottom:20px;
+  }
+
+  .eyebrow--sage{ color:var(--color-sage); border-color:var(--color-sage); background:var(--color-sage-soft); }
+  .eyebrow--gold{ color:var(--color-gold); border-color:var(--color-gold); background:var(--color-gold-soft); }
+  a.eyebrow{ text-decoration:none; transition:transform 0.15s ease; }
+  a.eyebrow:hover{ transform:translateY(-1px); }
+
+  .hero-badges{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
+  .hero-badges .eyebrow{ margin-bottom:0; }
+
+  .section-head{ max-width:640px; margin-bottom:52px; }
+  .section-head h2{ font-size:clamp(28px,4vw,40px); }
+  .section-head p{ color:var(--color-ink-soft); font-size:17px; margin-top:14px; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-family:var(--font-mono);
+    font-size:14px;
+    letter-spacing:0.02em;
+    font-weight:500;
+    padding:14px 24px;
+    border-radius:9px;
+    border:1px solid transparent;
+    cursor:pointer;
+    text-decoration:none;
+    transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .btn:focus-visible{ outline:2px solid var(--color-ink); outline-offset:3px; }
+  .btn--primary{ background:linear-gradient(135deg, var(--color-accent), var(--color-accent-deep)); color:#fff; box-shadow:0 1px 0 rgba(0,0,0,0.08); }
+  .btn--primary:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(232,98,44,0.32); }
+  .btn--ghost{ background:transparent; color:var(--color-ink); border-color:var(--color-line); }
+  .btn--ghost:hover{ background:#fff; border-color:var(--color-ink-faint); }
+  .btn--block{ width:100%; }
+
+  /* ---------- NAV ---------- */
+  .skip-link{
+    position:absolute; left:-999px; top:0; background:var(--color-ink); color:#fff;
+    padding:10px 16px; z-index:200; font-family:var(--font-mono); font-size:13px;
+  }
+  .skip-link:focus{ left:12px; top:12px; }
+
+  header.site{
+    position:sticky; top:0; z-index:100;
+    background:rgba(242,244,240,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--color-line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+    max-width:var(--wrap); margin:0 auto;
+  }
+  .logo{
+    display:flex; align-items:center; gap:2px;
+    font-family:var(--font-display); font-weight:700; font-size:21px; letter-spacing:0.01em;
+    text-decoration:none; color:var(--color-ink);
+  }
+  .logo em{ color:var(--color-accent); font-style:italic; font-size:24px; }
+  .nav-links{
+    display:flex; align-items:center; gap:32px;
+    font-size:14.5px; font-weight:500;
+    list-style:none; margin:0; padding:0;
+  }
+  .nav-links a{ text-decoration:none; color:var(--color-ink-soft); transition:color 0.15s; }
+  .nav-links a:hover{ color:var(--color-accent); }
+  .nav-cta{ display:flex; align-items:center; gap:18px; }
+  .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+  .nav-toggle span{ display:block; width:22px; height:2px; background:var(--color-ink); margin:5px 0; }
+
+  @media (max-width:860px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; align-items:flex-start; gap:0;
+      background:var(--color-bg-card);
+      border-bottom:1px solid var(--color-line);
+      max-height:0; overflow:hidden;
+      transition:max-height 0.25s ease;
+    }
+    .nav-links.open{ max-height:320px; }
+    .nav-links li{ width:100%; }
+    .nav-links a{ display:block; padding:16px 24px; border-top:1px solid var(--color-line); width:100%; }
+    .nav-toggle{ display:block; }
+    .nav-cta .btn--ghost{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding:76px 0 40px; position:relative; overflow:hidden; }
+  .hero-rx-mark{
+    position:absolute; top:-40px; right:-20px;
+    font-family:var(--font-display); font-style:italic; font-weight:600;
+    font-size:340px; color:var(--color-accent); opacity:0.08;
+    pointer-events:none; user-select:none; line-height:1;
+  }
+  .hero-inner{ max-width:760px; position:relative; }
+  .hero h1{ font-size:clamp(36px,5.4vw,58px); letter-spacing:-0.01em; }
+  .hero h1 em{ font-style:italic; color:var(--color-accent); }
+  .hero p.lede{
+    font-size:18.5px; color:var(--color-ink-soft); max-width:560px;
+    margin-top:22px;
+  }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:32px; }
+  .hero-trust{
+    margin-top:28px; font-family:var(--font-mono); font-size:13px;
+    color:var(--color-ink-faint); letter-spacing:0.01em;
+  }
+
+  .pulse-wrap{ margin-top:56px; }
+  .pulse-caption{
+    display:flex; justify-content:space-between; font-family:var(--font-mono);
+    font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--color-ink-faint); margin-top:8px;
+  }
+  .pulse-line{ stroke-dasharray:1400; stroke-dashoffset:1400; transition:stroke-dashoffset 1.8s ease; }
+  .pulse-line.drawn{ stroke-dashoffset:0; }
+
+  /* ---------- SYMPTOMS ---------- */
+  .symptom-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:20px 40px;
+  }
+  @media (max-width:720px){ .symptom-grid{ grid-template-columns:1fr; } }
+  .symptom{
+    display:flex; gap:14px; padding:20px 0; border-top:1px solid var(--color-line);
+  }
+  .symptom-mark{
+    font-family:var(--font-display); font-style:italic; color:var(--color-accent);
+    font-size:22px; flex:none; width:28px;
+  }
+  .symptom h3{ font-family:var(--font-body); font-size:16.5px; font-weight:600; }
+  .symptom p{ margin:6px 0 0; color:var(--color-ink-soft); font-size:15px; }
+
+  /* ---------- SERVICES ---------- */
+  .service-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  @media (max-width:900px){ .service-grid{ grid-template-columns:1fr; } }
+  .service-card{
+    background:var(--color-bg-card);
+    border:1px solid var(--color-line);
+    border-radius:var(--radius);
+    padding:28px 26px;
+  }
+  .service-icon{
+    width:44px; height:44px; border-radius:10px;
+    background:var(--color-sage-soft); color:var(--color-sage);
+    display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+  }
+  .service-icon--gold{ background:var(--color-gold-soft); color:var(--color-gold); }
+  .service-icon--ember{ background:var(--color-accent-soft); color:var(--color-accent); }
+  .service-card h3{ font-size:19px; }
+  .service-card .tag{
+    font-family:var(--font-mono); font-size:11.5px; color:var(--color-ink-faint);
+    letter-spacing:0.06em; text-transform:uppercase; display:block; margin-top:2px; margin-bottom:12px;
+  }
+  .service-card p{ color:var(--color-ink-soft); font-size:15px; margin:0; }
+
+  /* ---------- PRICING ---------- */
+  .pricing-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:start;
+  }
+  @media (max-width:900px){ .pricing-grid{ grid-template-columns:1fr; max-width:440px; margin:0 auto; } }
+
+  .rx-card{
+    position:relative;
+    background:var(--color-bg-card);
+    border:1px solid var(--color-line);
+    border-radius:0 0 var(--radius) var(--radius);
+    padding:34px 28px 28px;
+    display:flex; flex-direction:column; gap:18px;
+  }
+  .rx-card::before{
+    content:"";
+    display:block;
+    position:absolute; left:0; right:0; top:-1px; height:14px;
+    background-image:radial-gradient(circle, var(--color-bg) 3.5px, transparent 3.6px);
+    background-size:16px 16px;
+    background-position:8px -6px;
+  }
+  .rx-card--featured{
+    border-color:var(--color-accent);
+    box-shadow:0 18px 40px rgba(20,50,74,0.10);
+    transform:translateY(-10px);
+  }
+  @media (max-width:900px){ .rx-card--featured{ transform:none; } }
+
+  .rx-stamp{
+    position:absolute; top:22px; right:22px;
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--color-accent); border:1.5px solid var(--color-accent);
+    border-radius:100px; padding:5px 10px;
+    transform:rotate(6deg);
+    background:rgba(255,255,255,0.6);
+  }
+  .rx-stamp--sage{ color:var(--color-sage); border-color:var(--color-sage); }
+  .rx-stamp--gold{ color:var(--color-gold); border-color:var(--color-gold); background:rgba(255,255,255,0.65); }
+
+  .rx-card--fire{ border-top:4px solid var(--color-accent); }
+  .rx-card--leaf{ border-top:4px solid var(--color-sage); }
+  .rx-card--gold{ border-top:4px solid var(--color-gold); }
+
+  .rx-code{ font-family:var(--font-mono); font-size:12px; color:var(--color-ink-faint); }
+  .rx-card h3{ font-size:22px; }
+  .rx-price{ display:flex; align-items:baseline; gap:8px; margin-top:2px; }
+  .rx-price .amount{ font-family:var(--font-mono); font-size:34px; font-weight:600; color:var(--color-ink); }
+  .rx-price .unit{ font-family:var(--font-mono); font-size:13px; color:var(--color-ink-faint); }
+
+  .rx-desc{ font-size:14.5px; color:var(--color-ink-soft); margin:0; }
+
+  .rx-includes{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; }
+  .rx-includes li{ display:flex; gap:9px; font-size:14.5px; color:var(--color-ink); }
+  .rx-includes li svg{ flex:none; margin-top:3px; }
+
+  .rx-sig{
+    font-family:var(--font-mono); font-size:12.5px; color:var(--color-ink-soft);
+    border-top:1px dashed var(--color-line); padding-top:14px;
+  }
+  .rx-sig b{ color:var(--color-ink); }
+
+  .rx-signature{
+    margin-top:auto; display:flex; align-items:center; justify-content:space-between;
+    font-family:var(--font-display); font-style:italic; color:var(--color-ink-faint); font-size:14px;
+    border-top:1px solid var(--color-line); padding-top:14px;
+  }
+
+  .pricing-footnote{
+    text-align:center; margin-top:36px; font-family:var(--font-mono);
+    font-size:13px; color:var(--color-ink-faint);
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process-list{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:32px; position:relative;
+  }
+  @media (max-width:820px){ .process-list{ grid-template-columns:1fr; } }
+  .process-step{ position:relative; padding-top:8px; }
+  .process-num{
+    font-family:var(--font-mono); font-size:13px; color:var(--color-accent);
+    border:1px solid var(--color-accent); width:32px; height:32px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+  }
+  .process-step:nth-child(2) .process-num{ color:var(--color-gold); border-color:var(--color-gold); }
+  .process-step:nth-child(3) .process-num{ color:var(--color-sage); border-color:var(--color-sage); }
+
+  .symptom:nth-child(1) .symptom-mark{ color:var(--color-accent); }
+  .symptom:nth-child(2) .symptom-mark{ color:var(--color-gold); }
+  .symptom:nth-child(3) .symptom-mark{ color:var(--color-sage); }
+  .symptom:nth-child(4) .symptom-mark{ color:var(--color-teal); }
+  .process-step h3{ font-size:18.5px; }
+  .process-step .when{
+    display:block; font-family:var(--font-mono); font-size:12px; color:var(--color-ink-faint);
+    text-transform:uppercase; letter-spacing:0.06em; margin:4px 0 10px;
+  }
+  .process-step p{ color:var(--color-ink-soft); font-size:15px; margin:0; }
+
+  /* ---------- PROOF ---------- */
+  .proof-card{
+    max-width:640px; margin:0 auto; text-align:center;
+    background:var(--color-bg-card);
+    border:2px dashed var(--color-gold);
+    border-radius:var(--radius);
+    padding:48px 40px;
+    position:relative;
+  }
+  .proof-tag{
+    display:inline-flex; align-items:center; gap:7px;
+    font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--color-ink-faint); margin-bottom:24px;
+  }
+  .proof-stat{ display:flex; flex-direction:column; align-items:center; gap:6px; margin-bottom:18px; }
+  .proof-number{
+    font-family:var(--font-mono); font-weight:600; font-size:clamp(56px,9vw,96px); line-height:1;
+    background:linear-gradient(135deg, var(--color-accent), var(--color-gold));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .proof-label{ font-family:var(--font-display); font-style:italic; font-size:20px; color:var(--color-ink); }
+  .proof-client{ font-family:var(--font-mono); font-size:13.5px; color:var(--color-ink-soft); margin:0 0 14px; }
+  .proof-context{ font-size:15.5px; color:var(--color-ink-soft); max-width:460px; margin:0 auto; }
+  .proof-footnote{ font-family:var(--font-mono); font-size:11.5px; color:var(--color-ink-faint); margin-top:24px; }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  @media (max-width:900px){ .testi-grid{ grid-template-columns:1fr; } }
+  .testi-card{
+    background:var(--color-paper);
+    border:1px solid var(--color-line);
+    border-radius:var(--radius);
+    padding:26px;
+  }
+  .testi-card{ border-top:3px solid var(--color-accent); }
+  .testi-card:nth-child(2){ transform:rotate(-0.6deg); border-top-color:var(--color-gold); }
+  .testi-card:nth-child(3){ transform:rotate(0.5deg); border-top-color:var(--color-sage); }
+  .testi-card p.quote{
+    font-family:var(--font-display); font-style:italic; font-size:17px; color:var(--color-ink);
+    margin:0 0 18px;
+  }
+  .testi-who{ font-family:var(--font-mono); font-size:12.5px; color:var(--color-ink-soft); }
+  .testi-who b{ color:var(--color-ink); font-weight:600; }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ border-top:1px solid var(--color-line); max-width:820px; }
+  .faq-item{ border-bottom:1px solid var(--color-line); }
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding:22px 4px; display:flex; justify-content:space-between; align-items:center; gap:20px;
+    font-family:var(--font-body); font-size:16.5px; font-weight:600; color:var(--color-ink);
+  }
+  .faq-q:focus-visible{ outline:2px solid var(--color-ink); outline-offset:3px; }
+  .faq-plus{ font-family:var(--font-mono); font-size:20px; color:var(--color-accent); transition:transform 0.2s; flex:none; }
+  .faq-item[data-open="true"] .faq-plus{ transform:rotate(45deg); }
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height 0.25s ease;
+    color:var(--color-ink-soft); font-size:15px; padding:0 4px;
+  }
+  .faq-a p{ margin:0 0 20px; }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    background:var(--gradient-dragon); color:#fff; border-radius:20px;
+    padding:64px 48px; text-align:center; position:relative; overflow:hidden;
+  }
+  .final-cta::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:repeating-radial-gradient(circle at 0 0, transparent 0, transparent 17px, rgba(255,255,255,0.05) 18px, rgba(255,255,255,0.05) 19px);
+    background-size:38px 38px;
+    pointer-events:none;
+  }
+  .final-cta > *{ position:relative; z-index:1; }
+  .final-cta h2{ color:#fff; font-size:clamp(26px,4vw,38px); max-width:640px; margin:0 auto; }
+  .final-cta p{ color:#B9CBD6; margin-top:16px; font-size:16px; }
+  .final-cta .hero-actions{ justify-content:center; margin-top:30px; }
+  .final-cta .btn--ghost{ border-color:#3F5A6E; color:#fff; }
+  .final-cta .btn--ghost:hover{ background:rgba(255,255,255,0.08); }
+  .final-note{ margin-top:22px; font-family:var(--font-mono); font-size:12.5px; color:#7C93A3; }
+
+  /* ---------- FOOTER ---------- */
+  footer.site{ border-top:1px solid var(--color-line); padding:52px 0 36px; }
+  .footer-grid{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:32px; }
+  .footer-brand p{ color:var(--color-ink-soft); font-size:14.5px; max-width:280px; margin-top:10px; }
+  .footer-cols{ display:flex; gap:56px; flex-wrap:wrap; }
+  .footer-col h4{
+    font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--color-ink-faint); margin:0 0 14px;
+  }
+  .footer-col a{ display:block; text-decoration:none; color:var(--color-ink-soft); font-size:14.5px; margin-bottom:10px; }
+  .footer-col a:hover{ color:var(--color-accent); }
+  .footer-bottom{
+    margin-top:44px; padding-top:20px; border-top:1px solid var(--color-line);
+    font-family:var(--font-mono); font-size:12.5px; color:var(--color-ink-faint);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <nav class="nav">
+    <a href="#top" class="logo" title="TMD — The Marketing Dragons">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;">
+        <path d="M12 2c1.8 2.4 2.6 4.3 2.6 6.2 0 1.1-.5 1.9-1.2 2.6 1.9.3 3.6 1.1 4.9 2.6 1.6 1.9 2.1 4.3 1.3 6.6-1.6-1.4-3-1.9-4.3-1.9.6 1 .8 1.9.6 2.9-1.4-1.6-3.1-2.3-5.1-2.3s-3.7.7-5.1 2.3c-.2-1 0-1.9.6-2.9-1.3 0-2.7.5-4.3 1.9-.8-2.3-.3-4.7 1.3-6.6 1.3-1.5 3-2.3 4.9-2.6-.7-.7-1.2-1.5-1.2-2.6C7.4 6.3 8.2 4.4 10 2c.6.9 1 1.7 1.2 2.4.2-.7.5-1.5 0.8-2.4z" fill="url(#flameGrad)"/>
+        <defs><linearGradient id="flameGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8622C"/><stop offset="100%" stop-color="#D89A2E"/></linearGradient></defs>
+      </svg>TMD</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#pricing" class="btn btn--ghost">See pricing</a>
+      <a href="mailto:hello@tmd.agency?subject=I'd%20like%20to%20claim%20the%20launch%20offer" class="btn btn--primary">Claim offer</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="hero-rx-mark" aria-hidden="true">℞</span>
+      <div class="hero-inner">
+        <div class="hero-badges">
+          <span class="eyebrow">TMD · Launch offer · Limited time</span>
+          <a href="#proof" class="eyebrow eyebrow--gold">3.5x ROI for ad campaign clients →</a>
+        </div>
+        <h1>Your practice's growth,<br><em>prescribed.</em></h1>
+        <p class="lede">Google visibility, a website patients actually trust, and social media that looks the part — bundled into offers built for solo practitioners and small clinics. No agencies, no jargon, no year-long contracts.</p>
+        <div class="hero-actions">
+          <a href="mailto:hello@tmd.agency?subject=I'd%20like%20to%20claim%20the%20launch%20offer" class="btn btn--primary">Claim the launch offer →</a>
+          <a href="#how-it-works" class="btn btn--ghost">See how it works</a>
+        </div>
+        <p class="hero-trust">GBP optimization · Clinic websites · Social refresh — delivered in as little as 48 hours</p>
+      </div>
+
+      <div class="pulse-wrap reveal" id="pulseWrap">
+        <svg viewBox="0 0 1000 200" width="100%" height="140" aria-hidden="true">
+          <defs>
+            <linearGradient id="pulseGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#E8622C"/>
+              <stop offset="45%" stop-color="#C1442D"/>
+              <stop offset="72%" stop-color="#D89A2E"/>
+              <stop offset="100%" stop-color="#1E8A6E"/>
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="150" x2="1000" y2="150" stroke="#C9D3CC" stroke-width="1" stroke-dasharray="2 6"/>
+          <path id="pulseLine" class="pulse-line" fill="none" stroke="url(#pulseGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+            d="M0,150 L60,150 L90,150 L110,110 L130,190 L150,150 L220,150 L250,150 L270,110 L290,190 L310,150 L400,150 L440,150
+               L480,140 L520,150 L560,120 L600,132 L640,95 L680,108 L720,70 L760,84 L800,45 L840,58 L880,25 L920,12 L960,-2"/>
+        </svg>
+        <div class="pulse-caption">
+          <span>Before: invisible online</span>
+          <span>After: patients find you first</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYMPTOMS -->
+  <section class="section" id="symptoms">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--sage">The check-up</span>
+        <h2>Most practices don't have a marketing problem.<br>They have a visibility problem.</h2>
+        <p>Today, patients search before they ever call. If your practice doesn't show up in that search, it doesn't matter how good you are — you're competing for the patients who already know your name.</p>
+      </div>
+
+      <div class="symptom-grid reveal">
+        <div class="symptom">
+          <span class="symptom-mark" aria-hidden="true">℞</span>
+          <div>
+            <h3>You're not on Google Maps when it counts</h3>
+            <p>Someone searches "[your specialty] near me" and three other clinics show up before you — or you don't show up at all.</p>
+          </div>
+        </div>
+        <div class="symptom">
+          <span class="symptom-mark" aria-hidden="true">℞</span>
+          <div>
+            <h3>Your website doesn't say "trust me"</h3>
+            <p>No website, or one that hasn't changed since it was built — no way for a patient to see who you are or book you.</p>
+          </div>
+        </div>
+        <div class="symptom">
+          <span class="symptom-mark" aria-hidden="true">℞</span>
+          <div>
+            <h3>Your socials look inactive</h3>
+            <p>A patient checks your Instagram before their first visit. An empty or outdated grid quietly costs you their trust.</p>
+          </div>
+        </div>
+        <div class="symptom">
+          <span class="symptom-mark" aria-hidden="true">℞</span>
+          <div>
+            <h3>Reviews are working against you</h3>
+            <p>No system for asking happy patients to leave a review means the loudest voice online is often the wrong one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services" style="background:var(--section-teal-tint); border-top:1px solid var(--color-line); border-bottom:1px solid var(--color-line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What we treat</span>
+        <h2>Three services. Pick what your practice actually needs.</h2>
+        <p>Every offer below is built from these three — mix them, or take all three together.</p>
+      </div>
+
+      <div class="service-grid reveal">
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.4 7-13a7 7 0 10-14 0c0 5.6 7 13 7 13z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <span class="tag">Service 01</span>
+          <h3>Google Business Profile</h3>
+          <p>We optimize your GBP listing — categories, photos, service areas, and a review strategy — so you show up when patients search "near me," not just when they search your name.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon service-icon--gold" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 21h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span class="tag">Service 02</span>
+          <h3>Clinic website</h3>
+          <p>A clean, mobile-first site with your services, credentials, and a clear way to book or call — built to load fast and turn visits into appointments, not bounce them away.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon service-icon--ember" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="13" r="3.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="8.5" r="0.9" fill="currentColor"/></svg>
+          </div>
+          <span class="tag">Service 03</span>
+          <h3>Social refresh</h3>
+          <p>A profile makeover for Instagram and Facebook — bio, highlight covers, and a 30-day content template — so your page looks as credible as your practice actually is.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto; margin-right:auto; text-align:center; max-width:600px;">
+        <span class="eyebrow">Limited-time launch offer</span>
+        <h2>Pick your dosage.</h2>
+        <p>Every plan is a prescription pad — mix and match the services your practice needs most.</p>
+      </div>
+
+      <div class="pricing-grid reveal">
+
+        <!-- Quick Start -->
+        <div class="rx-card rx-card--featured rx-card--fire">
+          <span class="rx-stamp">Fastest turnaround</span>
+          <span class="rx-code">℞ No. 01</span>
+          <h3>Quick Start</h3>
+          <div class="rx-price"><span class="amount">₹7,000</span><span class="unit">/ one-time</span></div>
+          <p class="rx-desc">Any 1 service — GBP, Website, or Social Refresh. For the practice that needs one thing fixed, fast.</p>
+          <ul class="rx-includes">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#5C8168" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Choose 1: GBP, Website or Social Refresh</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#5C8168" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Handover guide included</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#5C8168" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 1 round of revisions</li>
+          </ul>
+          <p class="rx-sig">Sig: <b>Ready within 48 hours</b></p>
+          <a href="mailto:hello@tmd.agency?subject=Interested%20in%20the%20Quick%20Start%20plan" class="btn btn--primary btn--block">Choose Quick Start</a>
+          <div class="rx-signature"><span>Prescribed by TMD</span><span>Rx</span></div>
+        </div>
+
+        <!-- Growth Combo -->
+        <div class="rx-card rx-card--leaf">
+          <span class="rx-code">℞ No. 02</span>
+          <h3>Growth Combo</h3>
+          <div class="rx-price"><span class="amount">₹15,000</span><span class="unit">/ one-time</span></div>
+          <p class="rx-desc">Any 2 services, bundled. For the practice ready to fix its visibility and its first impression together.</p>
+          <ul class="rx-includes">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#5C8168" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Choose any 2 of 3 services</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#5C8168" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Handover guide + 30-day check-in</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#5C8168" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 2 rounds of revisions</li>
+          </ul>
+          <p class="rx-sig">Sig: <b>Ready within 10 days</b></p>
+          <a href="mailto:hello@tmd.agency?subject=Interested%20in%20the%20Growth%20Combo%20plan" class="btn btn--ghost btn--block">Choose Growth Combo</a>
+          <div class="rx-signature"><span>Prescribed by TMD</span><span>Rx</span></div>
+        </div>
+
+        <!-- Complete Starter -->
+        <div class="rx-card rx-card--gold">
+          <span class="rx-stamp rx-stamp--gold">Best value</span>
+          <span class="rx-code">℞ No. 03</span>
+          <h3>Complete Starter</h3>
+          <div class="rx-price"><span class="amount">₹20,000</span><span class="unit">/ one-time</span></div>
+          <p class="rx-desc">All 3 services — GBP + Website + Social Refresh. A full, coordinated first impression, start to finish.</p>
+          <ul class="rx-includes">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#5C8168" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> GBP + Website + Social Refresh</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#5C8168" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Handover guide + 30-day check-in</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#5C8168" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 3 rounds of revisions, priority support</li>
+          </ul>
+          <p class="rx-sig">Sig: <b>Ready within 10 days</b></p>
+          <a href="mailto:hello@tmd.agency?subject=Interested%20in%20the%20Complete%20Starter%20plan" class="btn btn--ghost btn--block">Choose Complete Starter</a>
+          <div class="rx-signature"><span>Prescribed by TMD</span><span>Rx</span></div>
+        </div>
+
+      </div>
+      <p class="pricing-footnote">Launch pricing · one-time fee · no long-term contracts</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works" style="background:var(--section-gold-tint); border-top:1px solid var(--color-line); border-bottom:1px solid var(--color-line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--sage">How it works</span>
+        <h2>Diagnosis. Prescription. Recovery.</h2>
+        <p>Three stages, start to finish — no long onboarding, no waiting around.</p>
+      </div>
+
+      <div class="process-list reveal">
+        <div class="process-step">
+          <span class="process-num">01</span>
+          <h3>Diagnosis</h3>
+          <span class="when">Day 0</span>
+          <p>A 15-minute call and a quick audit of your current Google presence, website, and socials — so we prescribe the right plan, not just the biggest one.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">02</span>
+          <h3>Prescription</h3>
+          <span class="when">Day 1 – 10</span>
+          <p>We build and optimize exactly what you chose, keeping you posted along the way. You review before anything goes live.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">03</span>
+          <h3>Recovery</h3>
+          <span class="when">Ongoing</span>
+          <p>You start showing up where patients are looking. We hand over every login and a short guide — you're never locked in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="section" id="proof">
+    <div class="wrap">
+      <div class="proof-card reveal">
+        <span class="proof-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2c1.8 2.4 2.6 4.3 2.6 6.2 0 1.1-.5 1.9-1.2 2.6 1.9.3 3.6 1.1 4.9 2.6 1.6 1.9 2.1 4.3 1.3 6.6-1.6-1.4-3-1.9-4.3-1.9.6 1 .8 1.9.6 2.9-1.4-1.6-3.1-2.3-5.1-2.3s-3.7.7-5.1 2.3c-.2-1 0-1.9.6-2.9-1.3 0-2.7.5-4.3 1.9-.8-2.3-.3-4.7 1.3-6.6 1.3-1.5 3-2.3 4.9-2.6-.7-.7-1.2-1.5-1.2-2.6C7.4 6.3 8.2 4.4 10 2c.6.9 1 1.7 1.2 2.4.2-.7.5-1.5 .8-2.4z" fill="var(--color-accent)"/></svg>
+          Results on file
+        </span>
+        <div class="proof-stat">
+          <span class="proof-number">3.5x</span>
+          <span class="proof-label">Return on Ad Spend</span>
+        </div>
+        <!-- PLACEHOLDER: swap for a real anonymized detail if the client has given permission,
+             e.g. "for a mental health clinic running campaigns across Hyderabad & Mumbai" -->
+        <p class="proof-client">— for clients running ad campaigns with us</p>
+        <p class="proof-context">Achieved through targeted Google &amp; Meta ad campaigns, paired with a conversion-ready landing page and an optimized Google Business Profile.</p>
+        <p class="proof-footnote">*Results vary by practice, market, and monthly ad budget.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Second opinions</span>
+        <h2>What other practices say</h2>
+      </div>
+      <div class="testi-grid reveal">
+        <div class="testi-card">
+          <p class="quote">"I didn't know my clinic wasn't even showing up on Maps until they showed me. Fixed within two days."</p>
+          <p class="testi-who"><b>Dr. Ananya Rao</b> · Dermatologist, Pune</p>
+        </div>
+        <div class="testi-card">
+          <p class="quote">"The website finally looks like it belongs to an actual clinic. Patients mention it when they walk in now."</p>
+          <p class="testi-who"><b>Dr. Vikram Sethi</b> · Orthopaedic Surgeon, Jaipur</p>
+        </div>
+        <div class="testi-card">
+          <p class="quote">"Took the Complete Starter. Simple process, no back and forth, done in about ten days as promised."</p>
+          <p class="testi-who"><b>Dr. Farah Sheikh</b> · Paediatrician, Hyderabad</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" style="background:var(--color-teal-soft); border-top:1px solid var(--color-line); border-bottom:1px solid var(--color-line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--sage">Fine print, plainly said</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+
+      <div class="faq-list reveal" id="faqList">
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">
+            What is a GBP, and why does it matter?
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>GBP stands for Google Business Profile — the listing that shows your clinic on Google Maps and in local search results, along with your hours, reviews, and photos. For most practices, it's the single biggest source of new-patient calls.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">
+            Can I start with Quick Start and add more later?
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Yes. Many practices start with one service to see how we work, then move to Growth Combo or Complete Starter for the remaining services — you'll only pay the difference, not the full price again.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">
+            Do you work with clinics outside India?
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Our launch pricing is built for the Indian market, but the process works anywhere. Write to us with your location and we'll confirm turnaround and availability.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">
+            What do you need from me to get started?
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Just 15 minutes for the diagnosis call, plus access to your existing GBP/website/social logins if you have them. If you don't have any of these yet, we set them up from scratch.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">
+            Is this a one-time fee or a subscription?
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>One-time fee, no recurring charges and no long-term contract. If you'd like ongoing management after your plan is delivered, we can quote that separately — entirely optional.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="final-cta reveal">
+        <h2>Your practice's next patient is searching right now.</h2>
+        <p>Book a free 15-minute diagnosis call — no pressure, no obligation to buy.</p>
+        <div class="hero-actions">
+          <a href="mailto:hello@tmd.agency?subject=I'd%20like%20to%20claim%20the%20launch%20offer" class="btn btn--primary">Claim the launch offer →</a>
+          <a href="https://wa.me/919876543210" class="btn btn--ghost">Message us on WhatsApp</a>
+        </div>
+        <p class="final-note">Launch pricing valid for a limited time · No long-term contracts</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo" title="TMD — The Marketing Dragons">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;">
+            <path d="M12 2c1.8 2.4 2.6 4.3 2.6 6.2 0 1.1-.5 1.9-1.2 2.6 1.9.3 3.6 1.1 4.9 2.6 1.6 1.9 2.1 4.3 1.3 6.6-1.6-1.4-3-1.9-4.3-1.9.6 1 .8 1.9.6 2.9-1.4-1.6-3.1-2.3-5.1-2.3s-3.7.7-5.1 2.3c-.2-1 0-1.9.6-2.9-1.3 0-2.7.5-4.3 1.9-.8-2.3-.3-4.7 1.3-6.6 1.3-1.5 3-2.3 4.9-2.6-.7-.7-1.2-1.5-1.2-2.6C7.4 6.3 8.2 4.4 10 2c.6.9 1 1.7 1.2 2.4.2-.7.5-1.5 0.8-2.4z" fill="url(#flameGradFoot)"/>
+            <defs><linearGradient id="flameGradFoot" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8622C"/><stop offset="100%" stop-color="#D89A2E"/></linearGradient></defs>
+          </svg>TMD</a>
+        <p>The Marketing Dragons. Digital marketing, prescribed for doctors — GBP, websites, and social, done right, done fast.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">Google Business Profile</a>
+          <a href="#services">Clinic website</a>
+          <a href="#services">Social refresh</a>
+        </div>
+        <div class="footer-col">
+          <h4>Practice</h4>
+          <a href="#pricing">Pricing</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@tmd.agency">hello@tmd.agency</a>
+          <a href="https://wa.me/919876543210">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TMD (The Marketing Dragons). All rights reserved.</span>
+      <span>Made for doctors, not marketers.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    const ans = item.querySelector('.faq-a');
+    btn.addEventListener('click', () => {
+      const isOpen = item.getAttribute('data-open') === 'true';
+      item.setAttribute('data-open', isOpen ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      ans.style.maxHeight = isOpen ? '0px' : ans.scrollHeight + 'px';
+    });
+  });
+
+  // Scroll reveal
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealEls = document.querySelectorAll('.reveal');
+  if (prefersReduced) {
+    revealEls.forEach(el => el.classList.add('in'));
+    document.getElementById('pulseLine').classList.add('drawn');
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+
+    // Draw the pulse line once hero is visible
+    const pulseObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('pulseLine').classList.add('drawn');
+          pulseObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    pulseObserver.observe(document.getElementById('pulseWrap'));
+  }
+</script>
+
+</body>
+</html>
